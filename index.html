@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday Brenda</title>
+
+<style>
+  body{
+    margin:0;
+    font-family:system-ui, sans-serif;
+    background:url('INSERT-YOUR-CUTE-BACKGROUND-IMAGE-URL-HERE') center/cover no-repeat fixed;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100vh;
+    padding:20px;
+  }
+
+  .card{
+    background:rgba(255,255,255,0.92);
+    padding:30px;
+    border-radius:25px;
+    max-width:420px;
+    width:100%;
+    box-shadow:0 4px 25px rgba(0,0,0,0.15);
+    text-align:center;
+    backdrop-filter:blur(8px);
+  }
+
+  h1{
+    color:#e600ac;
+    margin-bottom:15px;
+    font-size:2rem;
+  }
+
+  #message{
+    font-size:1.2rem;
+    color:#555;
+    white-space:pre-wrap;
+    margin-bottom:20px;
+  }
+
+  #userImage{
+    max-width:200px;
+    border-radius:20px;
+    margin-top:15px;
+    display:block;
+  }
+</style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>🎀 Happy Birthday Brenda! 🎀</h1>
+    <div id="message">Loading your message...</div>
+
+    <!-- Brenda’s Picture -->
+    <img id="userImage" src="INSERT-YOUR-IMAGE-URL-HERE" alt="Brenda">
+  </div>
+
+  <!-- Background music -->
+  <audio id="bgm" src="INSERT-YOUR-SONG-URL-HERE" autoplay loop></audio>
+
+<script>
+// get ?msg= from URL
+const params = new URLSearchParams(window.location.search);
+const msg = params.get("msg") || "No message provided yet!";
+document.getElementById("message").textContent = msg;
+</script>
+
+</body>
+</html>
