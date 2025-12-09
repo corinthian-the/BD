@@ -9,7 +9,7 @@
   body{
     margin:0;
     font-family:system-ui, sans-serif;
-    background:url('INSERT-YOUR-CUTE-BACKGROUND-IMAGE-URL-HERE') center/cover no-repeat fixed;
+    background:#ffe6f9;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -18,14 +18,13 @@
   }
 
   .card{
-    background:rgba(255,255,255,0.92);
+    background:white;
     padding:30px;
     border-radius:25px;
     max-width:420px;
     width:100%;
     box-shadow:0 4px 25px rgba(0,0,0,0.15);
     text-align:center;
-    backdrop-filter:blur(8px);
   }
 
   h1{
@@ -54,7 +53,7 @@
 
   <div class="card">
     <h1>🎀 Happy Birthday Brenda! 🎀</h1>
-    <div id="message">Loading your message...</div>
+    <div id="message">Loading message...</div>
 
     <!-- Brenda’s Picture -->
     <img id="userImage" src="INSERT-YOUR-IMAGE-URL-HERE" alt="Brenda">
@@ -64,10 +63,15 @@
   <audio id="bgm" src="INSERT-YOUR-SONG-URL-HERE" autoplay loop></audio>
 
 <script>
-// get ?msg= from URL
+// READ MESSAGE FROM URL
 const params = new URLSearchParams(window.location.search);
-const msg = params.get("msg") || "No message provided yet!";
-document.getElementById("message").textContent = msg;
+const msg = params.get("msg");
+
+if (msg) {
+  document.getElementById("message").textContent = msg;
+} else {
+  document.getElementById("message").textContent = "No message provided!";
+}
 </script>
 
 </body>
